@@ -3,6 +3,10 @@ This blogpost is not intended as a complete guide to building microservice based
 It's intended as a place for me to write down my thoughts and ideas regarding the stuff I'm working on.
 Thus, certain information and procedures might be omitted.
 
+**NOTE** This blogpost is not finished!
+
+TODO: Add graph
+
 ## Ruby on Rails
 Ruby on Rails has a large community with plenty of tools to make this possible. It is also one of the simpler and faster ways to get started.
 
@@ -11,7 +15,11 @@ I'm going to use the following gems to make this work:
  * [simple\_command](https://github.com/nebulab/simple_command)
  * [jwt](https://github.com/jwt/ruby-jwt)
 
+TODO: More in depth about gems and why
+
 ## "Asymmetric" Authentication
+TODO: Add graph to show authentication process
+
 I call the authentication and authorization system I will design "asymmetric", because it is based on public/private key based encryption and validation.
 
 Basically, there is an authentication/authorization microservice (auth) responsible for creating tokens which are then signed using the secret private key known only to that microservice.
@@ -43,3 +51,8 @@ Thus you introduce the 8 hour "invalidation", without the introduced overhead of
 But for this blogpost I'm going with the "8 hour valid" solution since it's the simplest to implement.
 
 #### Public/Private Key Change
+
+TODO: Explain issues, and some simple solutions
+
+## Frontend
+TODO:
