@@ -6,7 +6,7 @@ Writing an RSpec-spec for your custom Rails model validator is pretty straightfo
    3. Run a drop-table on the mocked database table after each test.
 * Use the above model and set the validated attribute to the values you want to test.
 
-## Creating the mocked model
+#### Creating the mocked model
 ```
 def mocked_model
   Class.new(ActiveRecord::Base) do
@@ -27,7 +27,7 @@ def drop_mocked_table
 end
 ```
 
-## Using the mocked model
+#### Using the mocked model
 ```
 describe SomeValidator, type: :model do
   # Disable transactional tests for this spec only.
@@ -50,3 +50,6 @@ describe SomeValidator, type: :model do
   # ... etc ...
 end
 ```
+
+#### Important note!
+I have had issues with conflicting mocked models and tables when they are using the same table name and not scoped to seperate modules. I highly recommend putting the mocked model and its setup and destroy functions inside a module, and giving the database table a new name for each spec.
